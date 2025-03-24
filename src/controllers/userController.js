@@ -63,7 +63,7 @@ export const deleteUser = async (req, res, next) => {
     const deletedUser = await deleteUserService(id);
     if (!deletedUser) return handleResponse(res, 404, "User Not Found");
 
-    handleResponse(res, 200, "Fetched All Users SuccessFully", updatedUser);
+    handleResponse(res, 200, "Fetched All Users SuccessFully", deletedUser);
   } catch (err) {
     next(err);
   }
